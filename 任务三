@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>网站一级标题</title>
+		<style>
+			body,p {
+				margin: 0;
+				padding: 0;
+			}
+			#body {
+				height: 472px;
+				background-color: #eee;
+				margin: 20px;
+				border: 1px solid #999;
+			}
+			#left_sidebar {
+				height: 120px;
+				width: 200px;
+				float: left;
+				background-color: white;
+				margin: 20px;
+				border: 1px solid #999;
+			}
+			#left_sidebar img{
+				margin: 20px auto 20px 20px;
+				border: 1px solid #999;
+			}
+			#left_sidebar p{
+				float: right;
+				margin: 20px 20px auto auto;
+			}
+			#right_sidebar {
+				height: 420px;
+				width: 120px;
+				float: right;
+				background-color: white;
+				margin: 20px;
+				border: 1px solid #999;
+			}
+			#right_sidebar img{
+				border: 1px solid #999;
+				margin: 20px auto auto 20px;
+			}
+			#main {
+				background-color: white;
+				margin: 20px 162px auto 242px;
+				border: 1px solid #999;
+				padding: 20px;
+			}
+		</style>
+    </head>
+
+    <body>
+	<div id="body">
+	<div id="left_sidebar">
+	<p>新生小队</p>
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1488797864504&di=f355e778c254573483200070ef39a03f&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20160301%2Fmp61264008_1456822889778_1_th.jpeg" width="80" height="80">
+	</div>
+	<div id="right_sidebar">
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1488797864504&di=f355e778c254573483200070ef39a03f&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20160301%2Fmp61264008_1456822889778_1_th.jpeg" width="80" height="80">
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1488797864504&di=f355e778c254573483200070ef39a03f&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20160301%2Fmp61264008_1456822889778_1_th.jpeg" width="80" height="80">
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1488797864504&di=f355e778c254573483200070ef39a03f&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20160301%2Fmp61264008_1456822889778_1_th.jpeg" width="80" height="80">
+	<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1488797864504&di=f355e778c254573483200070ef39a03f&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20160301%2Fmp61264008_1456822889778_1_th.jpeg" width="80" height="80">
+	</div>
+	<div id="main">
+		<p>公司团队介绍范文1</p>
+　　	<p>1 市场营销管理</p>
+　　	<p>金算盘网聚集营销领域的精英，负责市场营销方面的同学，在大学期间是就读于市场营销的专业，熟悉掌握营销各个方面的知识，有丰富的市场调研经验和方法，成功为茶叶店做过营销策划案，有成功的市场策划的经验.。对网络品牌创建和网络营销传播有着独特的见解和观点，并拥有丰富的经验。充分发挥互联网传播特点，以网民喜闻乐见的形式，能够根据客户需要提供针对性方案。打造网络营销服务、网络信息传播、网络公关与网络广告投放等等手段打出一套组合拳，创造出适合大学生市场的网络营销传播模式，为大学生量身定制网络营销战略方案。.对大学生理财有深入的调研和了解，对大学生这一理财市场有着很大的信心,有着富有创意的营销策划案，相信金算盘理财网在我们团队努力下定能够成功经营起来。</p>
+　　	<p>2运营、网络管理</p>
+　　	<p>在运营管理方面和网络管理方面，我们团队有着网站建设开发的项目经验的技术员，对企业的运作整体有着较好的理解，对网站运营比较熟悉，主要负责网站上的营销策划、熟悉计算机的操作和网络的运营安全管理，对未来网站的发展方案和规划有着高瞻远瞩。尽管经验还是比较缺少，但是相信在我们的努力和学习下会不断的完善，我们有着实力的网络技术作为后盾，相信可以把金算盘理财网做好，可以顺利的成功运营成长。</p>
+	</div>
+	</div>
+    </body>
+</html>
