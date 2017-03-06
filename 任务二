@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>网站一级标题</title>
+		<style>
+		body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td{
+		    margin: 0;
+		    padding: 0;	
+		}
+		body {
+			display: block;
+			background-color: rgb(240,240,240);
+			width: 100%;
+		}
+		.header {
+			position: relative;
+			height: 31px;
+			padding: 14px;
+			border-bottom: 1px solid rgb(97,250,242);
+			background-color: white;
+		}
+		.header li a{
+			text-decoration: none;
+			color: black;
+			font-weight: bold;
+		}	
+		.header ul{
+		    position: absolute;
+			top: 30px;
+			right: 2%;
+		}
+		.header li{
+			float: left;
+			margin-right: 25px;
+			font-size: 85%;
+		}
+		.header h1{
+			float: left;
+			display: block;
+			margin-left: 5%;
+		}
+		.main,.footer1{
+			background-color: white;
+			margin: 21px;
+			padding: 21px;
+			font-size: 85%;
+			border: 1px solid rgb(220,220,220);
+			border-bottom:3px solid rgb(160,160,160);
+			border-right:3px solid rgb(160,160,160);
+		}
+		.main p,{
+			line-height: 30px;
+			text-indent: 2em;
+		}
+		h3{
+			color: rgb(120,120,120);
+		}
+		h6{
+			color: rgb(150,150,150);
+		}
+		h2,h3,h4,p{
+			margin: 13px 0;
+			font-weight: 600;
+		}
+		.p_border p{
+			width: 285px;
+			border: 1px solid rgb(220,220,220);
+			text-align: center;
+			text-indent: 0;
+			margin-left: 30px;
+		}
+		.main ol,.main ul{
+			margin: 21px 21px 21px 42px;
+			line-height: 25px;
+			font-weight: 600;
+		}
+		.main table,#form table{
+			border-collapse:collapse;
+			width: 100%;
+		}
+		.main table td{
+			padding: 6px;
+		}
+		.main table tr:first-child{
+			font-weight: 600;
+			color: white;
+			background-color: rgb(62,62,62);
+		}
+		.main table tr:last-child{
+			background-color: rgb(220,220,220);
+			font-weight: 600;
+		}
+		#form table th:first-child{
+			text-align:right;
+
+		}
+		#form table th:last-child{
+			text-align:left;
+		}
+		#form table th{
+			padding: 6px;
+		}
+		#form table{
+			margin-left: 15%;
+		}
+		.width{
+			width: 100%;
+			padding: 10px;
+			border-radius: 10px;
+			background-color: rgb(81,75,255);
+			color: white;
+			font-weight: 600;
+			font-size: 110%;
+		}
+		.footer {
+			width: 100%;
+			height: 30px;
+			padding: 14px 0 14px 0;
+			background-color: white;
+			border-top: 1px solid rgb(97,250,242);
+		}
+		.footer p {
+			text-align: center;
+		}
+		span {
+			color: rgb(188,188,188);
+			font-size: 80%;
+			
+		}
+		</style>
+    </head>
+
+    <body>
+	<div class="header">
+		<h1><img src="https://www.baidu.com/img/baidu_jgylogo3.gif" width="99" height"36"></h1>
+		<ul>
+			<li><a href="https://www.hao123.com/">导航链接一</a></li>
+			<li><a href="https://www.baidu.com">导航链接二</a></li>
+			<li><a href="https://www.baidu.com">导航链接三</a></li>
+	    </ul>
+	</div>
+	<div class="main">
+		<h2>文章一级标题</h2>
+		<h3>文章二级标题</h3>
+		<h6>作者 发表时间时间</h6>
+		<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+		这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的换行了<br/>段落，这是一个很长很长的段落，
+		这是一个很长很长的段落，这是一个很长很长的段落，这是一个换行了<br/>很长很长的段落，
+		这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。
+		这是一个很长很长的段落，<a href="https://www.baidu.com">这个链接到百度</a>这是一个很长很长<strong>粗体字</strong>的段落，这是一个很长很长的段落。</p>
+		<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"/ width="270" height="129">
+		<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+		这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的换行了<br/>段落，这是一个很长很长的段落，
+		这是一个很长很长的段落，这是一个很长很长的段落，这是一个换行了<br/>很长很长的段落，
+		这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。
+		这是一个很长很长的段落。<a href="https://www.baidu.com">这个链接到百度</a>这是一个很长很长<strong>粗体字</strong>的段落，这是一个很长很长的段落。</p>
+	</div>
+    <div class="main">	
+		<h2>另一篇文章一级标题</h2>
+		<h3>文章二级标题</h3>
+		<h6>作者 发表时间</h6>
+		<p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+		这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的换行了<br/>段落，这是一个很长很长的段落，
+		这是一个很长很长的段落，这是一个很长很长的段落，这是一个换行了<br/>很长很长的段落，
+		这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，
+		这是一个很长很长的段落，<a href="https://www.baidu.com">这个链接到百度</a>这是一个很长很长<strong>粗体字</strong>的段落，这是一个很长很长的段落。</p>
+		<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"/ width="270" height="129">
+		<ul>
+		    <li>列表1</li>
+			<li>列表2</li>
+			<li>列表3</li>
+		</ul>
+	</div>
+	<div class="main">
+		<h2>图片</h2>
+		<div class="p_border">
+		<p>好看的图片<br/><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"/ width="270" height="129">
+		</p>
+		<p>好看的图片<br/><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"/ width="270" height="129">
+		</p>
+		<p>好看的图片<br/><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"/ width="270" height="129">
+		</p>
+		</div>
+	</div>
+    <div class="main">
+		<h2>另一篇文章一级标题</h2>
+		<h3>文章二级标题</h3>
+		<h6>作者 发表时间</h6>
+		<ol>
+		    <li>排名1</li>
+			<li>排名2</li>
+			<li>排名3</li>
+		</ol>
+        <strong>下面是一个表格，border="1"的明显表格:</strong>
+		<table border="1">
+		    <tr>
+			    <td>表头</td>
+				<td>表头</td>
+				<td>表头</td>
+			</tr>
+            <tr>
+			    <td>内容单元格</td>
+				<td>内容单元格</td>
+				<td><font color="purple">操作</font></td>
+			</tr>
+			<tr>
+			    <td>内容单元格</td>
+				<td>内容单元格</td>
+				<td><font color="purple">操作</font></td>
+			</tr>
+			<tr>
+			    <td>内容单元格</td>
+				<td>内容单元格</td>
+				<td><font color="purple">操作</font></td>
+			</tr>
+			<tr>
+			    <td>总计</td>
+				<td colspan="2">1000</td>
+			</tr>
+		</table>
+	</div>
+    <div class="footer1">
+		<h2>这里以后是一个侧栏，这是侧栏的标题</h2>
+		<form action="" method="get">
+		<div id="form">
+		<table>
+		<tr>
+		    <th>请输入邮箱地址</th>
+			<th><input type="texe" name="邮箱地址"/></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th><span>邮箱地址请按要求输入</span></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>请输入密码</th>
+			<th><input type="password" name="密码"/></th>
+		</tr>
+		<tr>
+			<th>请重复输入密码</th>
+			<th><input type="password" name="确认密码"/></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th><span>请输入6~16位数密码</span></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>性别</th>
+			<th><input type="radio" name="性别" value="男"/>男<input type="radio" name="性别" value="女"/>女
+			</th>
+		</tr>
+		<tr>
+		    <th>城市</th>
+			<th>
+		    <select>
+			    <option>北京</option>
+				<option>上海</option>
+				<option>广州</option>
+				<option>深圳</option>
+				<option>...</option>
+		    </select>
+			</th>
+		</tr>
+		<tr>
+			<th>爱好</th>
+			<th><input type="checkbox" name="爱好" value="运动"/ >运动<input type="checkbox" name="爱好" value="艺术"/>艺术<input type="checkbox" name="爱好" value="科学"/>科学
+			</th>
+		</tr>
+		<tr>
+			<th>个人描述</th>
+			<th><textarea name="个人描述" rows="5" cols="80" placeholder="这是一个多行输入框，输入您的个人描述"></textarea></th>
+		</tr>
+		</table>
+			<input class="width" type="submit" value="确认提交"/>
+		</form>
+	</div>
+	</div>
+	<div class="footer">
+		<p>版权所有&copy</p>
+	</div>
+    </body>
+</html>
