@@ -1,0 +1,394 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>网站一级标题</title>
+		<style>
+			body,img,ul,p,div{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				margin-right: 70px;
+				min-width: 1200px;
+				margin-left: 1px; 
+			}
+			
+			
+			
+			.header,.main{
+				width: 100%;
+			}
+			.header img{
+				margin-left: 40px;
+			}
+			.header ul{
+				float: right;
+				list-style-type:none;
+			}
+			.header ul li{
+				float: left;
+				margin: 22px 41px 0 0;
+				font-family: "黑体",sans-serif;
+			}
+			.header ul #first a{
+				color: rgb(231,79,77);
+				padding:0 16px 16px 16px;
+				border-bottom: 4px solid rgb(231,79,77);
+			}
+			a {
+				text-decoration: none;
+				color: rgb(132,134,138);
+			}
+			
+			
+			
+			.main{
+				position: relative;
+			}
+			.main p{
+				position: absolute;
+				left: 120px;
+				top: 220px;
+				color: white;
+				font-family: "arial",sans-serif;
+				font-size: 140%;
+				;
+			}
+			span#main_p{
+				font-size: 290%;
+			}
+			.main a{
+				position: absolute;
+				left: 125px;
+				top: 425px;
+			}
+			
+			
+			
+			.main_2_block{
+				width: 24.5%;
+				height: 244px;
+				text-align: center;
+				display: inline-block;
+			}
+			.main_2_block p{
+				line-height: 130%;
+				padding: 0 60px 15px 60px;
+				border-right: 2px solid rgb(132,134,138);
+				font-family: "黑体",sans-serif;
+				color: rgb(132,134,138);
+				font-size: 90%;
+			}
+			#main_2_p {
+				border-right: none;
+			}
+			
+			
+			
+			.main_3{
+				height: 359px;
+				width: 100%;
+			}
+			
+			
+			
+			.main_4{
+				position: relative;
+				height: 339px;
+				width: 100%;
+			}
+			
+			.main_4 .main_4_block{
+				position: absolute;
+				top: 18%;
+				left: 8%;
+			}
+			.main_4 #main_4_p{
+				text-align: center;
+				line-height: 350%;
+				color: white;
+				font-family: "黑体",sans-serif;
+				font-size: 80%;
+			}
+			.main_4 #main_4_p_span{
+				font-size: 170%;
+			}
+			.main_4 form{
+				text-align: center;
+			}
+			.main_4 select{
+				color: rgb(130,130,130);
+				padding: 8px 170px 8px 8px;
+				appearance:none;
+				-moz-appearance:none;
+				-webkit-appearance:none;
+				margin-right: 35px;
+				font-family: "黑体",sans-serif;
+				border: 1px solid white;
+			}
+			.main_4 select:hover{
+				border: 1px solid rgb(190,78,72);
+			}
+			.main_4 option{
+				background-color:rgb(222,222,222);
+			}
+			.main_4 #main_4_input{
+				margin-top: 35px;
+				padding: 5px 85px;
+				background-color:rgb(190,78,72);
+				border: 1px solid rgb(190,78,72);
+				color: white;
+				font-size: 110%;
+				font-family: "黑体",sans-serif;
+			}
+			
+			
+			
+			.main_5{
+				width: 100%;
+				height: 620px;
+				background-color: rgb(245,245,245);
+			}
+			.main_5 .main_5_block{
+				width: 1020px;
+				margin: 0 auto;
+				padding-top: 100px;;
+			}
+			.main_5 .main_5_block img{
+				padding: 12px 8px;
+				border: 1px solid rgb(218,218,218);
+				background-color: white;
+			}
+			.main_5 .main_5_block .main_5_block_litte{
+				font-family: "黑体",sans-serif;
+				text-align: center;
+				height: 396px;
+				width: 201px;
+				display: inline-block;
+				margin-right: 44px;
+			}
+			.main_5 .main_5_block .main_5_block_litte p{
+				line-height: 25px;
+			}
+			.main_5 span#main_5_block_litte_p{
+				color: rgb(130,130,130);
+				font-size: 80%;
+			}
+			
+			
+			
+			
+			.main_6{
+				position: relative;
+				width: 100%;
+			}
+			.main_6 a{
+				position: absolute;
+				right: 12%;
+				bottom: 29%;
+				color: rgb(231,79,77);
+				border: 2px solid rgb(231,79,77);
+				font-size: 85%;
+				background-color: white;
+				font-family: "黑体",sans-serif;
+				padding: 8px 28px;
+				font-weight: 600;
+			}
+			
+			
+			
+			.main_7{
+				width: 100%;
+				border-right: 2px solid rgb(237,237,237);
+			}
+			.main_7_input{
+				background-color: rgb(237,237,237);
+				padding: 15px 100px 10px 20px;
+				border: 8px solid white;
+			}
+			.main_7 form{
+				text-align: center;
+			}
+			.main_7_input_submit{
+				background-color: rgb(237,237,237);
+				padding: 15px 270px 10px 270px;
+				border: 8px solid white;
+				font-size: 100%;
+				font-family: "黑体",sans-serif;
+				margin-bottom: 100px;
+			}
+			
+			
+			
+			.main_8{
+				width: 100%;
+				background-color: rgb(51,54,63);
+				text-align: center;
+			}
+			.main_8 .main_8_input{
+				padding: 17px 250px 10px 20px;
+				margin-right: -8px;
+			}
+			.main_8 .main_8_input_submit{
+				padding: 13px 20px 9px 20px;
+				color: white;
+				background-color: rgb(111,113,120);
+				font-family: "黑体",sans-serif;
+				border: 3px solid rgb(111,113,120);
+				font-size: 100%;
+			}
+			.main_8_a{
+				margin-left: 15px; 
+				margin-bottom: 50px;
+			}
+			
+			
+			
+			.footer{
+				width: 100%;
+				height: 56px;
+				background-color: rgb(47,47,56);
+				margin-bottom: 16px;
+			}
+			.footer p{
+				color: white;
+				font-family: "黑体",sans-serif;
+				font-size: 80%;
+				float: left;
+				margin: 30px 0 0 100px;
+			}
+			.footer a{
+				color: white;
+				font-family: "黑体",sans-serif;
+				font-size: 80%;
+				float: right;
+				margin: 30px 20px 0 0;
+			}			
+        </style>
+    </head>
+
+    <body>
+		<div class="header" id="top">
+			<img src="http://img1.ph.126.net/sZy9Uc8Yt_Bbm3P4WzjsXQ==/6631877006259370711.png"/>
+			<ul>
+				<li id="first"><a href="#">首页</a></li>
+				<li><a href="#">最新活动</a></li>
+				<li><a href="#">项目介绍</a></li>
+				<li><a href="#">爱心社区</a></li>
+				<li><a href="#">关于我们</li>
+				<li><a href="#">登陆</a></li>
+			</ul>
+		</div>
+		<div class="main">
+			<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1489672290&di=bc9c06e5dbcb16db59a2bbb6a6c4c7c3&imgtype=jpg&er=1&src=http%3A%2F%2Fcyjctrip.qiniudn.com%2F1409842950%2FF77D9C45-C0E0-4A1F-89EE-0DA63777215D.jpg" height="700px" width="100%"/>
+			<p><span id="main_p">Time of new life</span><br/><br/>新时代，年轻的人们让我们一起<br/>体验新生活，享受新生活</p>
+			<a href=""><img src="http://img0.ph.126.net/3iwQpZkwQKXWjzSHTBHn1g==/6632377284047336745.png" height="62px" width="332px"/></a>
+		</div>
+		<div class="main_2">
+			<div class="main_2_block">
+				<img src="http://img0.ph.126.net/aq5pNEt5c_TLEei8g-W9YQ==/6632039733980289117.png" height="124px" width="146px"/>
+				<p>打造全新世界观，让你更<br/>爱你的生活</p>
+			</div>
+			<div class="main_2_block">
+				<img src="http://img0.ph.126.net/TkspZVc45qCRxgsc8ETW3g==/6632030937887259300.png" height="124px" width="146px"/>
+				<p>丰富多彩的公益活动，发<br/>挥新世界的主人公意识</p>
+			</div>
+			<div class="main_2_block">
+				<img src="http://img0.ph.126.net/1X1yUwQJ_WQ-2cs5jIKplA==/6632301417745028592.png" height="124px" width="146px"/>
+				<p>时尚的新理念，超前体验<br/>未知的生活</p>
+			</div>
+			<div class="main_2_block">
+				<img src="http://img2.ph.126.net/b3JWyczNVR6HJ2cxe6oo2Q==/6632182670491899449.png" height="124px" width="146px"/>
+				<p id="main_2_p">完善的培养机构，培养你<br/>全新的世界观</p>
+			</div>
+		</div>
+		<div class="main_3">
+			<img src="http://img2.ph.126.net/Qv125wXSp932zzOYCA_WRA==/6632529016651978232.png" height="359px" width="100%"/>
+		</div>
+		<div class="main_4">
+			<img src="http://img1.ph.126.net/DuIanV9779g1XVaAcjflmQ==/6632423463535712362.png" height="339px" width="100%"/>
+			<div class="main_4_block">
+			<p id="main_4_p"><span id="main_4_p_span">查找新世界城市活动信息</span><br/>每个城市都有不同的活动信息，请自助查询您所需要的城市</p>
+			<form action="" method="get">
+				<select>
+					<option hidden>家国</option>
+					<option>中国</option>
+					<option>...</option>
+				</select>
+				<select>
+					<option hidden>省份</option>
+					<option>北京市</option>
+					<option>天津市</option>
+					<option>河北省</option>
+					<option>陕西省</option>
+					<option>广东省</option>
+					<option>辽宁省</option>
+					<option> </option>
+				</select>
+				<select>
+					<option hidden>城市</option>
+					<option>...</option>
+					<option>...</option>
+				</select>
+				<input id="main_4_input" type="submit" value="搜   索"/>
+			</form>
+			</div>
+		</div>
+		<div class="main_5">
+			<div class="main_5_block">
+			<div class="main_5_block_litte">
+			<img src="http://a1.qpic.cn/psb?/V13E4qO21cPN5v/P98FrmFFpxzsA8AINtbG40W4lgZTKXA6WX7PMv8dBkw!/b/dGgBAAAAAAAA&bo=yQA4AQAAAAADANU!&rf=viewer_4" width="201px" height="312px"/>
+			<p>北京活动<br/><span id="main_5_block_litte_p">新社区大联盟</span></p>
+			</div>
+			<div class="main_5_block_litte">
+			<p>上 海 活 动<br/><span id="main_5_block_litte_p">新上海新景观探索</span></p>
+			<img src="http://a1.qpic.cn/psb?/V13E4qO21cPN5v/7EhZtL.HpwkttNquGJgfcoKpOVVOmfzWmWcU0APIwlA!/b/dFYBAAAAAAAA&bo=ygA2AQAAAAADANg!&rf=viewer_4" width="201px" height="312px"/>
+			</div>
+			<div class="main_5_block_litte">
+			<img src="http://a1.qpic.cn/psb?/V13E4qO21cPN5v/MQ3XGJsQcB95j6*91I8Dh4J.aPnQiSLuJM*xza70JUc!/b/dGgBAAAAAAAA&bo=yAA3AQAAAAADANs!&rf=viewer_4" width="201px" height="312px"/>
+			<p>深圳活动<br/><span id="main_5_block_litte_p">全新海岸线观点站</span></p>
+			</div>
+			<div class="main_5_block_litte">
+			<img src="http://a2.qpic.cn/psb?/V13E4qO21cPN5v/klbGOt8BbSXhdrDQGQFmeDmE3XfDiTUO1Z.qtyWuUhE!/b/dGYBAAAAAAAA&bo=xwA3AQAAAAADANQ!&rf=viewer_4" width="201px" height="312px"/>
+			<p>香港活动<br/><span id="main_5_block_litte_p">奢侈消费大派送</span></p>
+			</div>
+			</div>
+		</div>
+		<div class="main_6">
+			<img src="http://a1.qpic.cn/psb?/V13E4qO21cPN5v/CW40Eb*FvMhwaXMob3ZOq*.UX8n9zW6irjC6eQfcjss!/b/dGgBAAAAAAAA&bo=*wQ2AgAAAAADB.0!&rf=viewer_4"width="100%"/>
+			<a href="#">更多详细</a>
+		</div>
+		<div class="main_7">
+			<img src="http://a1.qpic.cn/psb?/V13E4qO21cPN5v/ni5I7Osu*Gc9cHx92vt1o6Sv0vpdIt2b7WP7oHyj*l0!/b/dGgBAAAAAAAA&bo=AAUkAQAAAAADAAU!&rf=viewer_4" width="100%"/>
+		</div>
+		<div class="main_7">
+			<form>
+				<input class="main_7_input" type="text" placeholder="姓名"/>
+				<input class="main_7_input" type="text" placeholder="年龄"/><br/>
+				<input class="main_7_input" type="text" placeholder="联系方式"/>
+				<input class="main_7_input" type="text" placeholder="联系地址"/><br/>
+				<textarea class="main_7_input" rows="7" cols="67" placeholder="请简单描述您梦想的生活"></textarea><br/>
+				<input class="main_7_input_submit" type="submit" value="提交申请"/>
+			</form>
+		</div>
+		<div class="main_8">
+			<img src="http://a2.qpic.cn/psb?/V13E4qO21cPN5v/Hay23aitq.d*XMW6YZzmZLcMmH8mckZL4HfOuHvKqmE!/b/dGYBAAAAAAAA&bo=.wGvAPsBrwADACU!&rf=viewer_4" />
+			<br/>
+			<form>
+			<input class="main_8_input" type="text" placeholder="someone@email.com"/>
+			<input class="main_8_input_submit" type="submit" value="提 交"/>
+			</form>
+			<br/>
+			<br/>
+			<a href=""><img class="main_8_a" src="http://a1.qpic.cn/psb?/V13E4qO21cPN5v/ZK4Oav8DfzoAuDAea7*0tTDOdad85mRCaJnOoRE3rzE!/b/dCABAAAAAAAA&bo=HQAcAAAAAAADByM!&rf=viewer_4"/></a>
+			<a href=""><img class="main_8_a" src="http://a3.qpic.cn/psb?/V13E4qO21cPN5v/xv2tcWNiJMurXab56bGMa45jY5PCYnfzVRiCx.ghc8k!/b/dPgAAAAAAAAA&bo=IwAdAAAAAAADABs!&rf=viewer_4"/></a>
+			<a href=""><img class="main_8_a" src="http://a1.qpic.cn/psb?/V13E4qO21cPN5v/Ulf*tOW6.sAhJrraceE2gKqmntlNRh6u9RQTIUaf6BI!/b/dPYAAAAAAAAA&bo=IgAdAAAAAAADABo!&rf=viewer_4"/></a>
+			<a href=""><img class="main_8_a" src="http://a3.qpic.cn/psb?/V13E4qO21cPN5v/iPlQe2Mc*kpcZlQJ0tq55b40.mdIKQXJRZ8bi4Z17Ys!/b/dB8BAAAAAAAA&bo=IQAdAAAAAAADABk!&rf=viewer_4"/></a>
+		</div>
+		<div class="footer">
+			<p>2016新世界</p>
+			<a href="#top">back to top</a>
+		</div>
+    </body>
+</html>
