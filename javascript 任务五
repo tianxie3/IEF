@@ -1,0 +1,94 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+	<style>
+		p{
+			display:inline-block;
+			background-color: red;
+			color:white;
+			padding:7px;
+			margin:5px 1px;
+		}
+		button{
+			margin-top: 4px;
+			margin-left: 18px;
+		}
+	</style>
+  </head>
+<body>
+	<input type="text" id="text"/> (请输入数字10~100！)<br/>
+	<button id="bottom_1" onclick="left_add()">左侧入</button>
+	<button id="bottom_2" onclick="right_add()">右侧入</button><br/>
+	<button id="bottom_3" onclick="left_del()">左侧出</button>
+	<button id="bottom_4" onclick="right_del()">右侧出</button>
+	<button id="bottom_5" onclick="pai()">排 列</button>
+	<div id="div"></div>
+<script type="text/javascript">
+	var id_div = document.getElementById("div");
+	var id_text = document.getElementById("text");
+	function right_add(){
+		if(id_div.childNodes.length <= 60){
+			var _text = id_text.value;
+			if(_text>=10 && _text<=100){
+				if(_text != ""){
+				var _p = document.createElement("p");
+				_p.style.paddingTop = id_text.value + "px";
+				_p.onmousedown = function(){alert("你删除了: " + id_div.removeChild(this).childNodes[0].nodeValue)};
+				id_div.appendChild(_p);
+				}
+			}
+		else{
+			alert("请输入数字10~100");
+		}
+		}
+		else{
+			alert("列表数目超过上限（60个）");
+		}		
+	}
+	function left_add(){
+		if(id_div.childNodes.length <= 60){
+			var _text = id_text.value;
+			if(_text>=10 && _text<=100){
+				if(_text != ""){
+				var _p = document.createElement("p");
+				_p.style.paddingTop = id_text.value + "px";
+				_p.onmousedown = function(){alert("你删除了: " + id_div.removeChild(this).childNodes[0].nodeValue)};
+				id_div.insertBefore(_p,id_div.childNodes[0]);
+				}
+			}
+		else{
+			alert("请输入数字10~100");
+		}
+		}
+		else{
+			alert("列表数目超过上限（60个）");
+		}	
+	}
+	function left_del(){
+		alert("你删除了: " + id_div.removeChild(id_div.childNodes[0]).childNodes[0].nodeValue);
+	}
+	function right_del(){
+		alert("你删除了: " + id_div.removeChild(id_div.childNodes[id_div.childNodes.length-1]).childNodes[0].nodeValue);
+	}
+	function pai(){
+		var len = id_div.childNodes.length;
+		var arr = [];
+		for(var i=0;i<len;i++){
+			arr[i] = id_div.childNodes[i].style.paddingTop;
+		}
+		for(var j=0;j<len;j++){
+			id_div.removeChild(id_div.childNodes[0]);
+		}
+		arr.sort()
+		for(var x=0;x<arr.length;x++){
+			var _p = document.createElement("p");
+			_p.style.paddingTop = arr[x];
+			_p.onmousedown = function(){alert("你删除了: " + id_div.removeChild(this).childNodes[0].nodeValue)};
+			id_div.appendChild(_p);
+		}
+	}
+</script>
+</body>
+</html>
