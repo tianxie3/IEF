@@ -1,0 +1,50 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <ul id="source">
+  <li>北京空气质量：<b>90</b></li>
+  <li>上海空气质量：<b>70</b></li>
+  <li>天津空气质量：<b>80</b></li>
+  <li>广州空气质量：<b>50</b></li>
+  <li>深圳空气质量：<b>40</b></li>
+  <li>福州空气质量：<b>32</b></li>
+  <li>成都空气质量：<b>90</b></li>
+  </ul>
+  <ul id="resort">
+  </ul>
+
+  <button id="sort-btn" >排序</button>
+
+<script type="text/javascript">
+function _resort(){
+	var _source = document.getElementById("source");
+	var _ul = document.getElementById("resort");
+	var _sourceData = _source.childNodes;
+	var new_sourceData = new Array();
+	for(var i=0,j=0;i<_sourceData.length;i++){
+		if(_sourceData[i].nodeType == 1){
+			new_sourceData[j] = [_sourceData[i].childNodes[0].nodeValue,_sourceData[i].childNodes[1].childNodes[0].nodeValue];
+			j++;
+		}
+	}
+	new_sourceData.sort(function(a,b){return b[1]-a[1]});
+	for(var x=0;x<new_sourceData.length;x++){
+		var  _li = document.createElement("li");
+		_li.innerHTML = "第" + (x+1) + "名" + new_sourceData[x][0] +"<b>" + new_sourceData[x][1] +"</b>";
+		_ul.appendChild(_li);
+	}
+	}
+	
+	function init() {
+		document.getElementById("sort-btn").onclick = _resort;
+	}
+	init()
+
+</script>
+</body>
+</html>
