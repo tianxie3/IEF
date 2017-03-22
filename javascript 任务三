@@ -19,6 +19,7 @@
   </ul>
 
   <button id="sort-btn" >排序</button>
+  <button id="sort-btn1" >添加</button>
 
 <script type="text/javascript">
 function _resort(){
@@ -33,17 +34,32 @@ function _resort(){
 		}
 	}
 	new_sourceData.sort(function(a,b){return b[1]-a[1]});
+	var len = _ul.childNodes.length;
+	if(len != 1){
+			for(var y=0;y<len;y++){
+				_ul.removeChild(_ul.childNodes[0]);
+			}
+	}
 	for(var x=0;x<new_sourceData.length;x++){
 		var  _li = document.createElement("li");
 		_li.innerHTML = "第" + (x+1) + "名" + new_sourceData[x][0] +"<b>" + new_sourceData[x][1] +"</b>";
 		_ul.appendChild(_li);
 	}
 	}
+function haha(){
+		var _ul = document.getElementById("source");
+		var _li = document.createElement("li");
+		_li.innerHTML = "成都空气质量：" + "<b>" + 90 + "</b>";
+		_ul.appendChild(_li);
+	}
+
 	
 	function init() {
 		document.getElementById("sort-btn").onclick = _resort;
+		document.getElementById("sort-btn1").onclick = haha;
 	}
 	init()
+
 
 </script>
 </body>
