@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+	<style>
+		#p1{
+			padding:0;
+			margin:7px 0 0 75px;
+			color:rgb(235,118,130);
+			font-family:"黑体";
+			font-size:110%;
+			display:none;
+		}
+		#text{
+			border:2px solid rgb(235,118,130);
+			font-family:"黑体";
+			border-radius:6px;
+			width:300px;
+			font-size:110%;
+			padding:10px;
+		}
+		#span{
+			font-family:"黑体";
+			font-size:120%;
+			margin-right: 20px;
+		}
+		#button{
+			font-family:"黑体";
+			color:white;
+			font-size:120%;
+			background-color:rgb(47,121,186);
+			border:1px solid rgb(47,121,186);
+			padding:9px 15px;
+			border-radius:6px;
+			margin-left: 10px;
+		}
+	</style>
+  </head>
+<body>
+<div>
+	<span id="span">名称</span>
+	<input type="text" id="text" onkeyup="_key(this)"/>
+	<button id="button" onclick="_mane()">验证</button>
+	<p id="p1">哈哈</p>
+</div>
+<script type="text/javascript">
+	var _text = document.getElementById("text");
+	var _p = document.getElementById("p1");
+	var re = /[^\w\u4e00-\u9fa5]/;
+	var _len;
+	function _mane(){
+		if(re.test(_text.value) == true){
+			_p.innerHTML = '中文、英文字母、数字或者"_"。';
+			_text.value = "";
+		}
+		else if(_len>16 || _len<4){
+			_p.innerHTML = "请输入4~16位字符。";
+			_text.value = "";
+		}
+		else{
+			_p.style.display = "none";
+			alert("验证成功！");
+		}
+	}
+	function _key(x){
+			len(x);
+			_p.innerHTML = _len + "个字符";
+			_p.style.display = "block";
+	}
+	
+	function len(a){
+		return _len = a.value.replace(/[^\x00-xff]/g,"xx").length;
+	}
+</script>
+</body>
+</html>
