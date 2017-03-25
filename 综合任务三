@@ -19,13 +19,6 @@
 		margin-left:20px;
 		width:100px;
 	}
-	#bj{
-		float:right;
-	}
-	#gz{
-		display:none;
-		float:right;
-	}
 	</style>
   </head>
 <body>
@@ -38,26 +31,24 @@
 	学校<select id="cs" class="select3" name="select2">
 	<option value="1">北京</option>
 	<option value="2">广州</option>
+	<option value="3">深圳</option>
+	<option value="4">上海</option>
 	</select>
-	<select id="bj" class="select3" name="select3">
+	<select id="dx" class="select3" name="select3">
 	<option value="1">北京大学</option>
-	<option value="2">...</option>
-	</select>
-	<select id="gz" class="select3" name="select4">
-	<option value="1">广州大学</option>
 	<option value="2">...</option>
 	</select>
 	</div>
 	<div id="div2">
 	就业单位<input type="text" id="select3"/>
 	</div>
+	<button onclick="haha()">提交</button>
 <script>
 	var _select2 = document.getElementById("select2");
 	var _select1 = document.getElementById("select1");
 	var _div1 = document.getElementById("div1");
 	var _div2 = document.getElementById("div2");
-	var _gz = document.getElementById("gz");
-	var _bj = document.getElementById("bj");
+	var _dx = document.getElementById("dx");
 	var _cs = document.getElementById("cs");
 	_select2.onfocus = function(){
 		_div2.style.display = "block";
@@ -68,14 +59,23 @@
 		_div1.style.display = "block";
 	}
 	_cs.onchange = function(){
-		if(this.value == "1"){
-			_gz.style.display = "none";
-			_bj.style.display = "block";
+		for(var i=0;i<_cs.childNodes.length;i++){
+			if(_cs.selectedIndex == 0){
+				_dx.innerHTML = "<option value='1'>北京大学</option><option value='2'>...</option>";
+			}
+			else if(_cs.selectedIndex == 1){
+				_dx.innerHTML = "<option value='1'>广州大学</option><option value='2'>...</option>";
+			}
+			else if(_cs.selectedIndex == 2){
+				_dx.innerHTML = "<option value='1'>深圳大学</option><option value='2'>...</option>";
+			}
+			else if(_cs.selectedIndex == 3){
+				_dx.innerHTML = "<option value='1'>上海大学</option><option value='2'>...</option>";
+			}
 		}
-		else{
-			_gz.style.display = "block";
-			_bj.style.display = "none";
-		}
+	}
+	function haha(){
+		alert("城市：" + _cs.selectedIndex + "学校:" + _dx.selectedIndex);
 	}
 </script>
 </body>
