@@ -4,150 +4,213 @@
     <meta charset="utf-8">
     <title>IFE JavaScript Task 01</title>
 	<style>
-		#main{
-			position:relative;
-			background-image: url(file:///C:/Users/Administrator/Desktop/%E7%BC%96%E7%A8%8B/html/javascript/22.PNG);
-			width:181px;
-			height:182px;
+		table {
+			border-collapse: collapse;
 		}
-		#ho,#ho2,#ho3,#ho4,#ho6,#ho5{
-			position:absolute;
-			width:44px;
-			height:43px;
-			background-color:black;
-			top:2px;
-			left:1px;
-			text-align:center;
-			color:white;
-			line-height:39px;
-			font-famliy:"新宋体";
+		td {
+			border: 2px solid black;
+			width: 39px;
+			height: 42px;
 		}
-		#ho2{
-			background-color:#ddd;
-			top:137px;
-			left:136px;
+		#div1{
+			position: relative;
 		}
-		#ho4{
-			background-color:red;
-			top:137px;
-			left:1px;
+		#div2{
+			position: absolute;
+			width: 41px;
+			height: 40px;
+			background-color: black;
+			top:25px;
+			left:24px;
 		}
-		#ho3{
-			background-color:yellow;
-			top:137px;
-			left:91px;
-		}
-		#ho5{
-			background-color:yellow;
-			top:92px;
-			left:91px;
-		}
-		#ho6{
-			background-color:yellow;
-			top:92px;
-			left:136px;
+		#div3 {
+			background-color: red;
+			height:10px;
+			width: 41px;
 		}
 	</style>
   </head>
 <body>
-<div id="main">
-<div id="ho2">终点</div>
-<div id="ho3">怪物</div>
-<div id="ho5">怪物</div>
-<div id="ho6">怪物</div>
-<div id="ho4">宝物</div>
-<div id="ho">你</div>
-</div>
-<p>请使用键盘方向键(只用过了谷歌浏览器，其他不一定兼容)</p>
+	<div id="div1">
+	<table>
+	<tr>
+	<th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+	</tr>
+	<tr>
+	<th>1</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>2</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>3</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>5</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>6</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>7</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>8</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>9</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>10</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	</table>
+	<div id="div2"><div id="div3"></div></div>
+	</div><br/>
+	<input type="text" id="text"/>
+	<button id="button">执行</button>
+	<p>go：向蓝色边所面向的方向前进一格（一格等同于正方形的边长）<br/>
+	left：向左转（逆时针旋转90度）<br/>
+	right：向右转（顺时针旋转90度）<br/>
+	back：向右转（旋转180度）
+	</p>
 <script>
-	var _ho = document.getElementById("ho");
-	var _ho3 = document.getElementById("ho3");
-	var _ho4 = document.getElementById("ho4");
-	var _ho5 = document.getElementById("ho5");
-	var strght = 0;
-	document.onkeydown = function(event){
-		var e = event || window.event || arguments.callee.caller.arguments[0];
-		var x = window.getComputedStyle(_ho, null);
-			if(e && e.keyCode==39){
-				if(!_ho.style.left){
-					_ho.style.left = x.left;
-				}
-				if(_ho.style.left != "136px"){
-					_ho.style.left = (parseInt(/\d+/.exec(_ho.style.left))+45) + "px";
-				}
+	var _text = document.getElementById("text");
+	var _button = document.getElementById("button");
+	var _div2 = document.getElementById("div2");
+	var direction = 0;   //方向上为0，右为1，下为2，左为3。//
+	_button.onclick = function(){
+		if(_text.value == "right"){
+			switch(direction){
+			case 0:
+				direction += 1;
+				_direction(direction);
+				break;
+			case 1:
+				direction += 1;
+				_direction(direction);
+				break;
+			case 2:
+				direction += 1;
+				_direction(direction);
+				break;
+			case 3:
+				direction += 1;
+				_direction(direction);
+				direction = 0;
+				break;
 			}
-			if(e && e.keyCode==37){
-				if(!_ho.style.left){
-					_ho.style.left = x.left;
-				}
-				if(_ho.style.left != "1px"){
-					_ho.style.left = (parseInt(/\d+/.exec(_ho.style.left))-45) + "px";
-				}
+		}
+		if(_text.value == "left"){
+			switch(direction){
+			case 0:
+				direction = 3;
+				_direction(direction);
+				break;
+			case 1:
+				direction = 4;
+				_direction(direction);
+				direction = 0;
+				break;
+			case 2:
+				direction = 1;
+				_direction(direction);
+				break;
+			case 3:
+				direction = 2;
+				_direction(direction);
+				break;
 			}
-			if(e && e.keyCode==40){
-				if(!_ho.style.top){
-					_ho.style.top = x.top;
-					_ho.style.left = xleft;
-				}
-				if(_ho.style.top != "137px"){
-					_ho.style.top = (parseInt(/\d+/.exec(_ho.style.top))+45) + "px";
-				}
+		}
+		if(_text.value == "back"){
+			switch(direction){
+			case 0:
+				direction = 2;
+				_direction(direction);
+				break;
+			case 1:
+				direction = 3;
+				_direction(direction);
+				direction = 0;
+				break;
+			case 2:
+				direction = 4;
+				_direction(direction);
+				direction = 0;
+				break;
+			case 3:
+				direction = 1;
+				_direction(direction);
+				break;
 			}
-			if(e && e.keyCode==38){
-				if(!_ho.style.top){
-					_ho.style.top = x.top;
+		}
+		if(_text.value == "go"){
+			var _top = _div2.style;
+			var _left = _div2.style;
+			switch(direction){
+			case 0:
+				if(!_top.top){
+					_top.top = "25px";
+					_left.left = "24px";
 				}
-				if(_ho.style.top != "2px"){
-					_ho.style.top = (parseInt(/\d+/.exec(_ho.style.top))-45) + "px";
+				if(_top.top != "25px"){
+					_top.top = (parseInt(/\d+/.exec(_top.top))-42) + "px";
 				}
+				break;
+			case 1:
+				if(!_top.top){
+					_top.top = "25px";
+					_left.left = "24px";
+				}
+				if(_left.left != "411px"){
+					_left.left = (parseInt(/\d+/.exec(_left.left))+43) + "px";
+				}
+				break;
+			case 2:
+				if(!_top.top){
+					_top.top = "25px";
+					_left.left = "24px";
+				}
+				if(_top.top != "403px"){
+					_top.top = (parseInt(/\d+/.exec(_top.top))+42) + "px";
+				}
+				break;
+			case 3:
+				if(!_top.top){
+					_top.top = "25px";
+					_left.left = "24px";
+				}
+				if(_left.left != "24px"){
+					_left.left = (parseInt(/\d+/.exec(_left.left))-43) + "px";
+				}
+				break;
 			}
+		}
 	}
-	document.onkeyup = function(){
-		if(_ho.style.top == "137px" && _ho.style.left == "136px"){
-			document.write("恭喜你通关了！");
+	function _direction(a){
+		if(a == 1){
+			_rotate(90);
 		}
-		else if(_ho.style.top == "137px" && _ho.style.left == "1px" && strght == 0){
-			var ans = prompt("1+1等于几?");
-			if(ans == "2"){
-			_ho.style.backgroundColor = "rgb(179,6,198)";
-			strght = 1;
-			alert("你获得了宝物，拥有攻击能力！");
-			}
-			else{
-				alert("这么简单都不会还想拿宝物！");
-			}
+		else if(a == 2){
+			_rotate(180);
 		}
-		else if(_ho.style.top == "137px" && _ho.style.left == "91px" && strght == 0){
-			alert("你被怪物打死了");
-			_ho.style.left = "1px";
-			_ho.style.top = "2px";
+		else if(a == 3){
+			_rotate(270);
 		}
-		else if(_ho.style.top == "137px" && _ho.style.left == "91px" && strght == 1){
-			_ho3.style.display = "none";
-			alert("勇士！你战胜了怪物");
-			strght = 2;
-		}
-		else if(_ho.style.top == "92px" && _ho.style.left == "91px" && strght == 0){
-			alert("你被怪物打死了");
-			_ho.style.left = "1px";
-			_ho.style.top = "2px";
-		}
-		else if(_ho.style.top == "92px" && _ho.style.left == "91px" && strght == 1){
-			_ho5.style.display = "none";
-			alert("勇士！你战胜了怪物");
-			strght = 2;
-		}
-		else if(_ho.style.top == "92px" && _ho.style.left == "136px" && strght == 0){
-			alert("你被怪物打死了");
-			_ho.style.left = "1px";
-			_ho.style.top = "2px";
-		}
-		else if(_ho.style.top == "92px" && _ho.style.left == "136px" && strght == 1){
-			_ho6.style.display = "none";
-			alert("勇士！你战胜了怪物");
-			strght = 2;
+		else if(a == 4){
+			_rotate(0);
 		}
 	}
+	function _rotate(w){
+		_div2.style.transform = "rotate(" + w + "deg)";
+		_div2.style.msTransform = "rotate(" + w + "deg)";
+		_div2.style.MozTransform = "rotate(" + w + "deg)";
+		_div2.style.webkitTransform = "rotate(" + w + "deg)";
+		_div2.style.OTransform = "rotate(" + w + "deg)";
+	}	
+
 </script>
 </body>
 </html>
