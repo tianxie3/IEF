@@ -84,8 +84,9 @@
 	var _text = document.getElementById("text");
 	var _button = document.getElementById("button");
 	var _div2 = document.getElementById("div2");
-	var direction = 0;   //方向上为0，右为1，下为2，左为3。//
+	var direction = 0;   //方向上为0，向右为1，向下为2，向左为3。//
 	_button.onclick = function(){
+		//判断指令 右//
 		if(_text.value == "right"){
 			switch(direction){
 			case 0:
@@ -107,6 +108,7 @@
 				break;
 			}
 		}
+		//判断指令 左//
 		if(_text.value == "left"){
 			switch(direction){
 			case 0:
@@ -128,6 +130,7 @@
 				break;
 			}
 		}
+		//判断指令 返回//
 		if(_text.value == "back"){
 			switch(direction){
 			case 0:
@@ -150,6 +153,7 @@
 				break;
 			}
 		}
+		//判断指令 走//
 		if(_text.value == "go"){
 			var _top = _div2.style;
 			var _left = _div2.style;
@@ -193,6 +197,7 @@
 			}
 		}
 	}
+	//判断位置，给出对应的旋转角度//
 	function _direction(a){
 		if(a == 1){
 			_rotate(90);
@@ -207,6 +212,7 @@
 			_rotate(0);
 		}
 	}
+	//兼容性//
 	function _rotate(w){
 		_div2.style.transform = "rotate(" + w + "deg)";
 		_div2.style.msTransform = "rotate(" + w + "deg)";
