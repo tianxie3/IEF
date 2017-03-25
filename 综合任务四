@@ -1,0 +1,153 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+	<style>
+		#main{
+			position:relative;
+			background-image: url(file:///C:/Users/Administrator/Desktop/%E7%BC%96%E7%A8%8B/html/javascript/22.PNG);
+			width:181px;
+			height:182px;
+		}
+		#ho,#ho2,#ho3,#ho4,#ho6,#ho5{
+			position:absolute;
+			width:44px;
+			height:43px;
+			background-color:black;
+			top:2px;
+			left:1px;
+			text-align:center;
+			color:white;
+			line-height:39px;
+			font-famliy:"新宋体";
+		}
+		#ho2{
+			background-color:#ddd;
+			top:137px;
+			left:136px;
+		}
+		#ho4{
+			background-color:red;
+			top:137px;
+			left:1px;
+		}
+		#ho3{
+			background-color:yellow;
+			top:137px;
+			left:91px;
+		}
+		#ho5{
+			background-color:yellow;
+			top:92px;
+			left:91px;
+		}
+		#ho6{
+			background-color:yellow;
+			top:92px;
+			left:136px;
+		}
+	</style>
+  </head>
+<body>
+<div id="main">
+<div id="ho2">终点</div>
+<div id="ho3">怪物</div>
+<div id="ho5">怪物</div>
+<div id="ho6">怪物</div>
+<div id="ho4">宝物</div>
+<div id="ho">你</div>
+</div>
+<p>请使用键盘方向键(只用过了谷歌浏览器，其他不一定兼容)</p>
+<script>
+	var _ho = document.getElementById("ho");
+	var _ho3 = document.getElementById("ho3");
+	var _ho4 = document.getElementById("ho4");
+	var _ho5 = document.getElementById("ho5");
+	var strght = 0;
+	document.onkeydown = function(event){
+		var e = event || window.event || arguments.callee.caller.arguments[0];
+		var x = window.getComputedStyle(_ho, null);
+			if(e && e.keyCode==39){
+				if(!_ho.style.left){
+					_ho.style.left = x.left;
+				}
+				if(_ho.style.left != "136px"){
+					_ho.style.left = (parseInt(/\d+/.exec(_ho.style.left))+45) + "px";
+				}
+			}
+			if(e && e.keyCode==37){
+				if(!_ho.style.left){
+					_ho.style.left = x.left;
+				}
+				if(_ho.style.left != "1px"){
+					_ho.style.left = (parseInt(/\d+/.exec(_ho.style.left))-45) + "px";
+				}
+			}
+			if(e && e.keyCode==40){
+				if(!_ho.style.top){
+					_ho.style.top = x.top;
+					_ho.style.left = xleft;
+				}
+				if(_ho.style.top != "137px"){
+					_ho.style.top = (parseInt(/\d+/.exec(_ho.style.top))+45) + "px";
+				}
+			}
+			if(e && e.keyCode==38){
+				if(!_ho.style.top){
+					_ho.style.top = x.top;
+				}
+				if(_ho.style.top != "2px"){
+					_ho.style.top = (parseInt(/\d+/.exec(_ho.style.top))-45) + "px";
+				}
+			}
+	}
+	document.onkeyup = function(){
+		if(_ho.style.top == "137px" && _ho.style.left == "136px"){
+			document.write("恭喜你通关了！");
+		}
+		else if(_ho.style.top == "137px" && _ho.style.left == "1px" && strght == 0){
+			var ans = prompt("1+1等于几?");
+			if(ans == "2"){
+			_ho.style.backgroundColor = "rgb(179,6,198)";
+			strght = 1;
+			alert("你获得了宝物，拥有攻击能力！");
+			}
+			else{
+				alert("这么简单都不会还想拿宝物！");
+			}
+		}
+		else if(_ho.style.top == "137px" && _ho.style.left == "91px" && strght == 0){
+			alert("你被怪物打死了");
+			_ho.style.left = "1px";
+			_ho.style.top = "2px";
+		}
+		else if(_ho.style.top == "137px" && _ho.style.left == "91px" && strght == 1){
+			_ho3.style.display = "none";
+			alert("勇士！你战胜了怪物");
+			strght = 2;
+		}
+		else if(_ho.style.top == "92px" && _ho.style.left == "91px" && strght == 0){
+			alert("你被怪物打死了");
+			_ho.style.left = "1px";
+			_ho.style.top = "2px";
+		}
+		else if(_ho.style.top == "92px" && _ho.style.left == "91px" && strght == 1){
+			_ho5.style.display = "none";
+			alert("勇士！你战胜了怪物");
+			strght = 2;
+		}
+		else if(_ho.style.top == "92px" && _ho.style.left == "136px" && strght == 0){
+			alert("你被怪物打死了");
+			_ho.style.left = "1px";
+			_ho.style.top = "2px";
+		}
+		else if(_ho.style.top == "92px" && _ho.style.left == "136px" && strght == 1){
+			_ho6.style.display = "none";
+			alert("勇士！你战胜了怪物");
+			strght = 2;
+		}
+	}
+</script>
+</body>
+</html>
