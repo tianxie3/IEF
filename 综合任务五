@@ -1,0 +1,263 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+	<style>
+		body{
+			text-align: center;
+		}
+		table {
+			border-collapse: collapse;
+		}
+		td {
+			border: 2px solid black;
+			width: 39px;
+			height: 42px;
+		}
+		#div1{
+			position: relative;
+			margin-left: 32%;
+		}
+		#div2{
+			position: absolute;
+			width: 41px;
+			height: 40px;
+			background-color: black;
+			top:25px;
+			left:24px;
+		}
+		#div3 {
+			background-color: red;
+			height:10px;
+			width: 41px;
+		}
+	</style>
+  </head>
+<body>
+	<div id="div1">
+	<table>
+	<tr>
+	<th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+	</tr>
+	<tr>
+	<th>1</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>2</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>3</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>5</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>6</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>7</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>8</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>9</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	<tr>
+	<th>10</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+	</tr>
+	</table>
+	<div id="div2"><div id="div3"></div></div>
+	</div><br/>
+	<input type="text" id="text"/>
+	<button id="button">执行</button>
+	<p>go：向蓝色边所面向的方向前进一格（一格等同于正方形的边长）<br/>
+	left：向左转（逆时针旋转90度）<br/>
+	right：向右转（顺时针旋转90度）<br/>
+	back：向右转（旋转180度）
+	</p>
+<script>
+	var _text = document.getElementById("text");
+	var _button = document.getElementById("button");
+	var _div2 = document.getElementById("div2");
+	var angle = 0;
+	var t1;
+	var i = 0;
+	var j = null;
+	var direction = 0;   //方向上为0，向右为1，向下为2，向左为3。//
+	//1秒钟执行时间内，禁止按钮
+	function _disabled(){
+		_button.disabled = false;
+	}
+	//按钮事件
+	_button.onclick = function(){
+		_button.disabled = true;
+		setTimeout("_disabled()",1000);
+		//判断指令 右
+		if(_text.value == "right"){
+			if(direction == 3){
+				direction = 0;
+			}
+			else{
+				direction++;
+			}
+			t1 = setInterval("_rotate(angle)",10);
+		}
+		//判断指令 左
+		else if(_text.value == "left"){
+			if(direction == 0){
+				direction = 3;
+			}
+			else{
+				direction--;
+			}
+			t1 = setInterval("_rotate(angle)",10);
+		}
+		//判断指令 返回
+		else if(_text.value == "back"){
+			if(direction == 0 || direction == 1){
+				direction += 2;
+			}
+			else if(direction == 2 || direction == 3){
+				direction -= 2;
+			}
+			t1 = setInterval("_rotate(angle)",5);
+		}
+		//判断指令 走
+		else if(_text.value == "go"){
+			var _top = _div2.style;
+			var _left = _div2.style;
+				if(!_top.top){
+					_top.top = "25px";
+					_left.left = "24px";
+				}
+				if(_top.top != "25px" && direction == 0){
+					t1 = setInterval("haha()",20);
+				}
+				else if(_left.left != "411px" && direction == 1){
+					t1 = setInterval("haha()",20);
+				}
+				else if(_top.top != "403px" && direction == 2){
+					t1 = setInterval("haha()",20);
+				}
+				else if(_left.left != "24px" && direction == 3){
+					t1 = setInterval("haha()",20);
+				}
+			}
+	}
+	//转向的动画效果
+	function _rotate(w){
+	if(_text.value == "right"){
+		angle++;
+		if(direction == 1 && angle==91){
+			clearInterval(t1);
+		}
+		else if(direction == 2 && angle==181){
+			clearInterval(t1);
+		}
+		else if(direction == 3 && angle==271){
+			clearInterval(t1);
+		}
+		else if(direction == 0 && angle==361){
+			clearInterval(t1);
+			angle = 0;
+		}
+	}
+	else if(_text.value == "left"){
+		angle--;
+		if(direction == 3 && angle== -91){
+			clearInterval(t1);
+			angle = 270;
+		}
+		else if(direction == 0 && angle==-1){
+			clearInterval(t1);
+		}
+		else if(direction == 1 && angle==89){
+			clearInterval(t1);
+		}
+		else if(direction == 2 && angle==179){
+			clearInterval(t1);
+		}
+	}
+	else if(_text.value == "back"){
+		angle++;
+		if(direction == 2 && angle== 181){
+			clearInterval(t1);
+		}
+		else if(direction == 3 && angle==271){
+			clearInterval(t1);
+		}
+		else if(direction == 0 && angle==361){
+			clearInterval(t1);
+			angle = 0;
+		}
+		else if(direction == 1 && angle==451){
+			clearInterval(t1);
+			angle = 91;
+		}
+	}
+		_div2.style.transform = "rotate(" + w + "deg)";
+		_div2.style.msTransform = "rotate(" + w + "deg)";
+		_div2.style.MozTransform = "rotate(" + w + "deg)";
+		_div2.style.webkitTransform = "rotate(" + w + "deg)";
+		_div2.style.OTransform = "rotate(" + w + "deg)";
+		
+	}
+	//GO的动画效果
+	function haha(){
+		if(direction == 1){
+			if(j === null){
+				j = parseInt(/\d+/.exec(_div2.style.left));
+			}
+			i++;
+			_div2.style.left = (j+i) + "px";
+			if(_div2.style.left == (j+43) + "px"){
+				clearInterval(t1);
+				j = null;
+				i = 0;
+			}
+		}
+		else if(direction == 3){
+			if(j === null){
+				j = parseInt(/\d+/.exec(_div2.style.left));
+			}
+			i++;
+			_div2.style.left = (j-i) + "px";
+			if(_div2.style.left == (j-43) + "px"){
+				clearInterval(t1);
+				j = null;
+				i = 0;
+			}
+		}
+		else if(direction == 0){
+			if(j === null){
+				j = parseInt(/\d+/.exec(_div2.style.top));
+			}
+			i++;
+			_div2.style.top = (j-i) + "px";
+			if(_div2.style.top == (j-42) + "px"){
+				clearInterval(t1);
+				j = null;
+				i = 0;
+			}
+		}
+		else if(direction == 2){
+			if(j === null){
+				j = parseInt(/\d+/.exec(_div2.style.top));
+			}
+			i++;
+			_div2.style.top = (j+i) + "px";
+			if(_div2.style.top == (j+42) + "px"){
+				clearInterval(t1);
+				j = null;
+				i = 0;
+			}
+		}
+	}
+</script>
+</body>
+</html>
