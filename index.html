@@ -1,0 +1,216 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+	<style>
+		div{
+			padding:5px;
+			width:450px;
+			border:2px solid rgb(233,233,233);
+			box-shadow: 6px 6px 3px #ddd;
+		}
+		.p{
+			padding:0;
+			margin:7px 0 0 75px;
+			font-family:"黑体";
+			font-size:110%;
+			display:none;
+			color:rgb(222,222,222);
+		}
+		.text{
+			border:2px solid rgb(222,222,222);
+			font-family:"黑体";
+			border-radius:6px;
+			width:300px;
+			font-size:110%;
+			padding:10px;
+			outline:none;
+			margin-top:10px;
+		}
+		.span{
+			font-family:"黑体";
+			font-size:120%;
+			margin-right: 20px;
+		}
+		#button{
+			font-family:"黑体";
+			width:200px;
+			color:white;
+			font-size:120%;
+			background-color:rgb(47,121,186);
+			border:1px solid rgb(47,121,186);
+			padding:9px 15px;
+			border-radius:6px;
+			margin:10px 0 0 80px;
+		}
+	</style>
+  </head>
+<body>
+<div>
+	<span id="span1" class="span">名称</span>
+	<input type="text" id="text1" class="text"/><br/>
+	<p id="p1" class="p">输入4~16位字符的中文、字母、数字或者"_"</p>
+	<span id="span2" class="span">密码</span>
+	<input type="password" id="text2" class="text"/><br/>
+	<p id="p2" class="p">请输入6~16位密码</p>
+	<span id="span3" class="span">确认密码</span>
+	<input type="password" id="text3" class="text"/><br/>
+	<p id="p3" class="p">请再次输入密码</p>
+	<span id="span4" class="span">邮箱</span>
+	<input type="text" id="text4" class="text"/><br/>
+	<p id="p4" class="p">请输入邮箱地址</p>
+	<span id="span5" class="span">手机</span>
+	<input type="text" id="text5" class="text"/><br/>
+	<p id="p5" class="p">请输入您的手机号码</p>
+	<button id="button">验证</button>
+</div>
+<script type="text/javascript">
+	var _text = document.getElementById("text1");
+	var _text2 = document.getElementById("text2");
+	var _text3 = document.getElementById("text3");
+	var _text4 = document.getElementById("text4");
+	var _text5 = document.getElementById("text5");
+	var _button = document.getElementById("button");
+	var _p = document.getElementById("p1");
+	var _p2 = document.getElementById("p2");
+	var _p3 = document.getElementById("p3");
+	var _p4 = document.getElementById("p4");
+	var _p5 = document.getElementById("p5");
+	var re = /[^\w\u4e00-\u9fa5]/;
+	var _len;
+	var arr = [];
+	
+	function len(a){
+		return _len = a.value.replace(/[^\x00-xff]/g,"xx").length;
+	}
+	_text.onfocus = function(){
+		_p.style.display = "block";
+		_text.style.borderColor = "rgb(100,174,239)";
+	}
+	_text.onblur = function(){
+		if(re.test(_text.value) == true){
+			_p.innerHTML = '中文、英文字母、数字或者"_"。';
+			_p.style.color = "rgb(235,118,130)";
+			_text.style.borderColor = "rgb(235,118,130)";
+			arr[0] = 0;
+		}
+		else if(_len>16 || _len<4 ||_text.value == ""){
+			_p.innerHTML = "请输入4~16位字符。";
+			_p.style.color = "rgb(235,118,130)";
+			_text.style.borderColor = "rgb(235,118,130)";
+			arr[0] = 0;
+		}
+		else{
+			_p.innerHTML = "验证成功";
+			_p.style.color = "rgb(135,203,116)";
+			_text.style.borderColor = "rgb(135,203,116)";
+			arr[0] = 1;
+		}
+	}
+	_text.onkeyup = function (){
+			len(this);
+			_p.innerHTML = _len + "个字符";
+			_text.style.borderColor = "rgb(222,222,222)";
+			_p.style.color = "rgb(222,222,222)";
+			_p.style.display = "block";
+	}
+
+	_text2.onfocus = function(){
+		_p2.style.display = "block";
+		_text2.style.borderColor = "rgb(100,174,239)";
+	}
+	_text2.onblur = function(){
+		if(this.value.length<6 || this.value.length>16){
+			_p2.innerHTML = "请输入正确的6~16位密码";
+			_text2.style.borderColor = "rgb(235,118,130)";
+			_p2.style.color = "rgb(235,118,130)";
+			arr[1] = 0;
+		}
+		else{
+			_p2.innerHTML = "验证成功";
+			_text2.style.borderColor = "rgb(135,203,116)";
+			_p2.style.color = "rgb(135,203,116)";
+			arr[1] = 1;
+		}
+		if(_text3.value != ""&& this.value != _text3.value){
+			_p3.innerHTML = "与上一次输入不一致";
+			_p3.style.display = "block";
+			_text3.style.borderColor = "rgb(235,118,130)";
+			_p3.style.color = "rgb(235,118,130)";
+			arr[2] = 0;
+		}
+	}
+	
+	_text3.onfocus = function(){
+		_p3.style.display = "block";
+		_text3.style.borderColor = "rgb(100,174,239)";
+	}
+	_text3.onblur = function(){
+		if(this.value != _text2.value || this.value.length < 6){
+			_p3.innerHTML = "与上一次输入不一致";
+			_text3.style.borderColor = "rgb(235,118,130)";
+			_p3.style.color = "rgb(235,118,130)";
+			arr[2] = 0;
+		}
+		else{
+			_p3.innerHTML = "验证成功";
+			_text3.style.borderColor = "rgb(135,203,116)";
+			_p3.style.color = "rgb(135,203,116)";
+			arr[2] = 1;
+		}
+	}
+	
+	_text4.onfocus = function(){
+		_p4.style.display = "block";
+		_text4.style.borderColor = "rgb(100,174,239)";
+	}
+	_text4.onblur = function(){
+		if(/^\w+[@]{1}[a-zA-z]{2,10}.com$/.test(this.value) == false){
+			_p4.innerHTML = "请输入正确的邮箱地址";
+			_text4.style.borderColor = "rgb(235,118,130)";
+			_p4.style.color = "rgb(235,118,130)";
+			arr[3] = 0;
+		}
+		else{
+			_p4.innerHTML = "验证成功";
+			_text4.style.borderColor = "rgb(135,203,116)";
+			_p4.style.color = "rgb(135,203,116)";
+			arr[3] = 1;
+		}
+	}
+
+	_text5.onfocus = function(){
+		_p5.style.display = "block";
+		_text5.style.borderColor = "rgb(100,174,239)";
+	}
+	_text5.onblur = function(){
+		if(/^\d{11}$/.test(this.value) == false){
+			_p5.innerHTML = "请输入11位数的手机号码";
+			_text5.style.borderColor = "rgb(235,118,130)";
+			_p5.style.color = "rgb(235,118,130)";
+			arr[4] = 0;
+		}
+		else{
+			_p5.innerHTML = "验证成功";
+			_text5.style.borderColor = "rgb(135,203,116)";
+			_p5.style.color = "rgb(135,203,116)";
+			arr[4] = 1;
+		}
+	}	
+	
+	_button.onclick = function(){
+		var len = 0;
+		for(var i=0;i<arr.length;i++){
+			len += arr[i];
+		}
+		if(len == 5){
+			alert("提交成功")
+		}
+		else{
+			alert("请输入正确的信息")
+		}
+	}
+</script>
+</body>
+</html>
