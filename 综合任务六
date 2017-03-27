@@ -5,7 +5,7 @@
     <title>IFE JavaScript Task 01</title>
 	<style>
 		#main{
-			position:fixed;
+			position:fixed;//浮出层主要实现功能            
 			border:2px solid rgb(133,133,133);
 			width:40%;
 			height:40%;
@@ -67,6 +67,7 @@
 	var _main = document.getElementById("main");
 	var _button1 = document.getElementById("button1");
 	var _button2 = document.getElementById("button2");
+	//网页弹窗功能计时          
 	window.onload = function(){
 		setTimeout('_main.style.display = "block"',1000);
 	}
