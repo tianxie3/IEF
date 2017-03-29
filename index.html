@@ -9,47 +9,56 @@
 			margin:0;
 			padding:0;
 		}
-		#box1{
-			width:200px;
-			height:200px;
+		#box{
+			width:100px;
+			height:100px;
+			background-color:black;
+			cursor:move;
 			position:absolute;
-			background-color:yellow;
-			left:-200px;
-			top:50px;
-		}
-		#box2{
-			border:1px solid black;
-			width:18px;
-			margin-left:200px;
 		}
 	</style>
   </head>
 <body>
-<div id="box1"><div id="box2"><p>礼<br/>品</p></div></div>
+<div id="box"></div>
 <script>
-	window.onload = function(){
-		var _box1 = document.getElementById("box1");
-		_box1.onmouseover = function(){
-			_move(0);
+	var _box = document.getElementById("box");
+	_box.style.left = "100px";
+	_box.style.top = "100px";
+	_box.onmousedown = function(event){
+		event = event || window.event;
+		var _x = event.clientX - _box.offsetLeft;
+		var _y = event.clientY - _box.offsetTop;
+		document.onmousemove = function(event){
+			event = event || window.event;
+			_move(event,_x,_y);
 		}
-		_box1.onmouseout = function(){
-			_move(-200);
+		_box.onmouseup = function(){
+			document.onmousemove = null;
+			_box.onmouseup = null;
 		}
 	}
-	var move1;
-	function _move(width){
-		clearInterval(move1);
-		var _box1 = document.getElementById("box1");
-		move1 = setInterval(function(){
-			var time = (width - _box1.offsetLeft)/20;
-		    time = time>0?Math.ceil(time):Math.floor(time);
-			if(_box1.offsetLeft == width){
-				clearInterval(move1);
-			}
-			else{
-			_box1.style.left = _box1.offsetLeft + time + "px";				
-			}
-		},30);
+	
+	function _move(e,x,y){
+		var l = e.clientX - x,
+			t = e.clientY - y,
+			winW = document.documentElement.clientWidth || document.body.clientWidth,
+			winH = document.documentElement.clientHeight|| document.body.clientHeight,
+			maxW = winW - _box.offsetWidth;
+			maxH = winH - _box.offsetHeight;
+		if(l<0){
+			l = 0;
+		}
+		else if(l>maxW){
+			l = maxW;
+		}
+		if(t<0){
+			t = 0;
+		}
+		else if(t>maxH){
+			t = maxH;
+		}
+		_box.style.left = l + "px";
+		_box.style.top = t + "px";
 	}
 </script>
 </body>
